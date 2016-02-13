@@ -188,6 +188,10 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11437980, guid: 0c282b53451d93f4da3739bc9b5b4a6c, type: 2}
+      propertyPath: sendToTable
+      value: 
+      objectReference: {fileID: 8300000, guid: 03793c7205f231a4d8e5b4454902cc2b, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c282b53451d93f4da3739bc9b5b4a6c, type: 2}
   m_IsPrefabParent: 0

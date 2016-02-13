@@ -18,6 +18,7 @@ public class uiManager : MonoBehaviour {
     public AudioClip soundperfect;
     AudioSource aSource;
     bool shouldShake;
+    bool shouldHighlight;
 
     public GameObject Salmonella;
 
@@ -78,6 +79,9 @@ public class uiManager : MonoBehaviour {
         if (shouldShake) {
             GM.currentChicken.sShaker.ShakeIt();
         }
+        if (shouldHighlight) {
+            GM.currentChicken.GetComponent<chickendecorator>().FocusOnMe();
+        }
     }
 
     IEnumerator showCookingTabCo()
@@ -101,6 +105,7 @@ public class uiManager : MonoBehaviour {
         Color c = Color.white;
         float diff = cookness - 100;
         shouldShake = false;
+        shouldHighlight = false;
 
         aSource.clip = null;
 
@@ -116,6 +121,8 @@ public class uiManager : MonoBehaviour {
             t = "juicy!";
             c = Color.green;
             aSource.clip = soundNice;
+            shouldHighlight = true;
+            shouldHighlight = true;
             
         }
         else if (cookness < 105)
@@ -124,12 +131,14 @@ public class uiManager : MonoBehaviour {
             c = Color.yellow;
             GM.satisfiedCustomers++;
             aSource.clip = soundperfect;
+            shouldHighlight = true;
         }
         else if(cookness<120){
             t = "crispy!";
             c = Color.red;
             GM.satisfiedCustomers++;
             aSource.clip = soundNice;
+            shouldHighlight = true;
         }
 
         else{

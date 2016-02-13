@@ -13,7 +13,30 @@ public class chickendecorator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         chickenScript = GetComponent<chicken>();
+        
 	}
+
+    public void FocusOnMe() {
+        StartCoroutine(HighlightMe());
+    }
+
+    IEnumerator HighlightMe() {
+        yield return new WaitForEndOfFrame();
+
+        int hits = 3;
+
+        Vector3 originScale = transform.localScale;
+        float multiplier = 1.2f;
+        float freq = 0.2f;
+        for (int i = 0; i < hits; i++)
+        {
+            transform.localScale = originScale * multiplier;
+            yield return new WaitForSeconds(freq);
+            transform.localScale = originScale;
+            yield return new WaitForSeconds(freq);
+
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {

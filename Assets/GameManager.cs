@@ -24,16 +24,21 @@ public class GameManager : MonoBehaviour {
     public int satisfiedCustomers;
     public int tries;
 
+
+
 	// Use this for initialization
 	void Start () {
         UI = GetComponent<uiManager>();
+        
         StartNewChicken();
+        
 	
 	}
 
     public void PlayerWantsToFinishCooking() {
         if (status == GameStates.cooking)
         {
+            
             status = GameStates.resultTab;
             UI.SetForResults();
             Grill.GoToRestaurant();
