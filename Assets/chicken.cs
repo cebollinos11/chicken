@@ -21,7 +21,7 @@ public class chicken : MonoBehaviour {
 
     GameManager GM;
 
-    spriteShaker sShaker;
+    [HideInInspector]public spriteShaker sShaker;
 
 
 	// Use this for initialization
@@ -32,17 +32,24 @@ public class chicken : MonoBehaviour {
         sl = GM.sliderGrill;
         //sR = GetComponent<SpriteRenderer>();
 
+        string weight = "2 Kg.";
+        
+
         int i = Random.Range(0, 100);
         if (i < 20) {
             transform.localScale = Vector3.one * 0.75f;
             cookRatio = 2;
+            weight = "1 Kg.";
         }
 
         if (i >80)
         {
             transform.localScale = Vector3.one * 1.5f;
             cookRatio = 0.7f;
+            weight = "4 Kg.";
         }
+
+        GM.UI.chickenWeight.text = weight;
 
 	}
 	
@@ -64,20 +71,26 @@ public class chicken : MonoBehaviour {
 	}
 
     void updateChicken() {
-        cookness += sl.value/100f*cookRatio;
-        if (cookness > 100f)
+
+
+
+        cookness += sl.value/100f*cookRatio*2;
+        if (cookness > 200f)
         {
-            cookness = 100f;
+            cookness = 200f;
         }
 
-        if (cookness > 62 && !particlesAlreadyStarted)
+        if (cookness >= 115 && !particlesAlreadyStarted)
         {
+            cookness = 200f;
             particles.GetComponent<ParticleSystem>().Play();
             particlesAlreadyStarted = true;
             sShaker.ShakeIt();
             GM.PlayerWantsToFinishCooking();
             aSource.Play();
         }
+
+        Debug.Log(cookness);
 
     }
 

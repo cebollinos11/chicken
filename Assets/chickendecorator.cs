@@ -22,12 +22,12 @@ public class chickendecorator : MonoBehaviour {
 
         //handle Sprite
         float c;
-        c = cookness * (1f / 100f) * 2;
+        c = cookness * (1f / 100f) ;
         cookedSprite.color = new Color(1, 1, 1, c);
 
-        if (cookness > 60)
+        if (cookness > 100)
         {
-            c = cookness * (1f / 100f);
+            c = (cookness-100f) * (1f / 100f);
             burntSprite.color = new Color(0, 0, 0, c);
         }
 

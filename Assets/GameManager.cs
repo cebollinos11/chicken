@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
     [HideInInspector]
     public GameStates status;
 
-    uiManager UI;
+    [HideInInspector] public uiManager UI;
 
     public grill Grill;
     [HideInInspector]

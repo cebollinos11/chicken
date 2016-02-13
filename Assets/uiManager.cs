@@ -11,11 +11,15 @@ public class uiManager : MonoBehaviour {
     public Text resultText;
     public Text satisfiedCustomers;
 
+    public Text chickenWeight;
+
     public AudioClip soundNice;
     public AudioClip soundraw;
     public AudioClip soundperfect;
     AudioSource aSource;
+    bool shouldShake;
 
+    public GameObject Salmonella;
 
 	// Use this for initialization
 	void Start () {
@@ -55,11 +59,25 @@ public class uiManager : MonoBehaviour {
     
     }
 
+    IEnumerator executeSalmonellaStamp() {
+
+        yield return new WaitForSeconds(1f);
+        Salmonella.SetActive(true);
+    
+    }
+
     IEnumerator showResultsTabCo() {
 
         yield return new WaitForSeconds(0.5f);
         ResultsTab.SetActive(true);
         aSource.Play();
+        Salmonella.SetActive(false);
+        if (aSource.clip == soundraw) {
+            StartCoroutine(executeSalmonellaStamp());
+        }
+        if (shouldShake) {
+            GM.currentChicken.sShaker.ShakeIt();
+        }
     }
 
     IEnumerator showCookingTabCo()
@@ -81,35 +99,43 @@ public class uiManager : MonoBehaviour {
 
         string t = "too raw!";
         Color c = Color.white;
-        float diff = cookness - 60;
+        float diff = cookness - 100;
+        shouldShake = false;
 
         aSource.clip = null;
 
 
-        if (diff < -10){
+        if (cookness < 80){
+            shouldShake = true;
             t = "too raw";
-            aSource.clip = soundraw;
-           
-            
+            aSource.clip = soundraw;        
             
         }
             
-        else if (diff >= 2){
-            t = "you burned it!";
-            c = Color.black;
+        else if (cookness<95){
+            t = "juicy!";
+            c = Color.green;
             
         }
-        else if (Mathf.Abs(diff) < 2){
+        else if (cookness < 105)
+        {
             t = "perfect!";
             c = Color.yellow;
             GM.satisfiedCustomers++;
             aSource.clip = soundperfect;
         }
-        else{
-            t = "nice!";
-            c = Color.blue;
+        else if(cookness<110){
+            t = "crispy!";
+            c = Color.red;
             GM.satisfiedCustomers++;
             aSource.clip = soundNice;
+        }
+
+        else{
+            t = "you burnt it!";
+            c = Color.black;
+            
+            
         }
 
         resultText.text = t;
