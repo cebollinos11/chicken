@@ -82,7 +82,7 @@ public class chicken : MonoBehaviour {
 
         if (cookness >= 115 && !particlesAlreadyStarted)
         {
-            cookness = 200f;
+            cookness = 190f;
             particles.GetComponent<ParticleSystem>().Play();
             particlesAlreadyStarted = true;
             sShaker.ShakeIt();

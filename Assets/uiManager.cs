@@ -115,6 +115,7 @@ public class uiManager : MonoBehaviour {
         else if (cookness<95){
             t = "juicy!";
             c = Color.green;
+            aSource.clip = soundNice;
             
         }
         else if (cookness < 105)
