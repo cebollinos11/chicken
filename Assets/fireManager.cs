@@ -33,6 +33,7 @@ public class fireManager : MonoBehaviour {
         }
 
         transform.localScale += Vector3.one* transform.localScale.x*0.01f * Mathf.Sin(2 * 3.14f * freq * Time.time+osciOffset);
+        transform.position += Vector3.one  * 0.001f * Mathf.Sin(2 * 3.14f * freq * Time.time + osciOffset);
 	
 	}
 }

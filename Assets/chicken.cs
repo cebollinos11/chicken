@@ -80,7 +80,7 @@ public class chicken : MonoBehaviour {
             cookness = 200f;
         }
 
-        if (cookness >= 115 && !particlesAlreadyStarted)
+        if (cookness >= 120 && !particlesAlreadyStarted)
         {
             cookness = 190f;
             particles.GetComponent<ParticleSystem>().Play();

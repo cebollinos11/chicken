@@ -125,7 +125,7 @@ public class uiManager : MonoBehaviour {
             GM.satisfiedCustomers++;
             aSource.clip = soundperfect;
         }
-        else if(cookness<110){
+        else if(cookness<120){
             t = "crispy!";
             c = Color.red;
             GM.satisfiedCustomers++;

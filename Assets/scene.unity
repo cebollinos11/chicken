@@ -188,26 +188,6 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11497104, guid: 0c282b53451d93f4da3739bc9b5b4a6c, type: 2}
-      propertyPath: m_FontData.m_BestFit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11454946, guid: 0c282b53451d93f4da3739bc9b5b4a6c, type: 2}
-      propertyPath: m_FontData.m_BestFit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11497104, guid: 0c282b53451d93f4da3739bc9b5b4a6c, type: 2}
-      propertyPath: m_FontData.m_MaxSize
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 11454946, guid: 0c282b53451d93f4da3739bc9b5b4a6c, type: 2}
-      propertyPath: m_FontData.m_MaxSize
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 22493528, guid: 0c282b53451d93f4da3739bc9b5b4a6c, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -27
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c282b53451d93f4da3739bc9b5b4a6c, type: 2}
   m_IsPrefabParent: 0
@@ -285,80 +265,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!1 &999939172 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 132754, guid: 0c282b53451d93f4da3739bc9b5b4a6c, type: 2}
-  m_PrefabInternal: {fileID: 671140423}
---- !u!82 &999939176
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 999939172}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d3c59c2fa486cfb488682a2fcba4232d, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!1001 &1144080699
 Prefab:
   m_ObjectHideFlags: 0
