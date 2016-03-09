@@ -8,6 +8,7 @@ public class uiManager : MonoBehaviour {
 
     public GameObject ResultsTab;
     public GameObject CookingTab;
+    public GameObject FinalTab;
     public Text resultText;
     public Text satisfiedCustomers;
 
@@ -43,11 +44,21 @@ public class uiManager : MonoBehaviour {
         GM.PlayerWantsToFinishCooking();
     
     }
+
+
+    public void SetForFinal() {
+        ResultsTab.SetActive(false);
+        CookingTab.SetActive(false);
+        FinalTab.SetActive(true);
+        FinalTab.GetComponent<finalCount>().CountEverything();
+    }
+
     public void SetForCooking() {
 
 
         StartCoroutine(showCookingTabCo());
         ResultsTab.SetActive(false);
+        FinalTab.SetActive(false);
     
     }
 
@@ -56,7 +67,8 @@ public class uiManager : MonoBehaviour {
         CookingTab.SetActive(false);
         StartCoroutine(showResultsTabCo());
         UpdateResultText(GM.currentChicken.cookness);
-        satisfiedCustomers.text = GM.satisfiedCustomers+"/" + GM.tries;
+        //satisfiedCustomers.text = GM.satisfiedCustomers+"/" + GM.tries;
+        satisfiedCustomers.text = GM.currentRun.chickensleft.ToString();
     
     }
 
@@ -123,6 +135,7 @@ public class uiManager : MonoBehaviour {
             aSource.clip = soundNice;
             shouldHighlight = true;
             shouldHighlight = true;
+            GM.currentRun.juicy++;
             
         }
         else if (cookness < 105)
@@ -132,6 +145,7 @@ public class uiManager : MonoBehaviour {
             GM.satisfiedCustomers++;
             aSource.clip = soundperfect;
             shouldHighlight = true;
+            GM.currentRun.perfect++;
         }
         else if(cookness<120){
             t = "crispy!";
@@ -139,6 +153,7 @@ public class uiManager : MonoBehaviour {
             GM.satisfiedCustomers++;
             aSource.clip = soundNice;
             shouldHighlight = true;
+            GM.currentRun.crispy++;
         }
 
         else{

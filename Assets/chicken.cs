@@ -90,7 +90,7 @@ public class chicken : MonoBehaviour {
             aSource.Play();
         }
 
-        Debug.Log(cookness);
+        //Debug.Log(cookness);
 
     }
 

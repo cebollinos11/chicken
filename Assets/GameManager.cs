@@ -24,11 +24,16 @@ public class GameManager : MonoBehaviour {
     public int satisfiedCustomers;
     public int tries;
 
+    public runClass currentRun;
+
 
 
 	// Use this for initialization
 	void Start () {
         UI = GetComponent<uiManager>();
+
+        currentRun = new runClass();
+        currentRun.init();
         
         StartNewChicken();
         
@@ -47,9 +52,31 @@ public class GameManager : MonoBehaviour {
     }
 
 
+    public void StartNewGame() {
+
+        currentRun = new runClass();
+        currentRun.init();
+        Debug.Log("new");
+        Debug.Log(currentRun.chickensleft);
+        StartNewChicken();
+        
+    
+    }
+
+
 
     public void StartNewChicken() {
 
+
+        if (currentRun.chickensleft < 1)
+        {
+            UI.SetForFinal();
+            return;
+        
+        }
+        
+        currentRun.chickensleft--;
+        
         tries++;
 
         if (currentChicken != null) {

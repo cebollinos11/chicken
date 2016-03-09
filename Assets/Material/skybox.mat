@@ -142,6 +142,22 @@ Material:
         second: .5
       data:
         first:
+          name: _Exposure
+        second: 1
+      data:
+        first:
+          name: _SunDisk
+        second: 2
+      data:
+        first:
+          name: _SunSize
+        second: .0399999991
+      data:
+        first:
+          name: _AtmosphereThickness
+        second: 1
+      data:
+        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -178,22 +194,6 @@ Material:
         second: 0
       data:
         first:
-          name: _Exposure
-        second: 1
-      data:
-        first:
-          name: _SunDisk
-        second: 2
-      data:
-        first:
-          name: _SunSize
-        second: .0399999991
-      data:
-        first:
-          name: _AtmosphereThickness
-        second: 1
-      data:
-        first:
           name: _Rotation
         second: 0
     m_Colors:
@@ -216,4 +216,4 @@ Material:
       data:
         first:
           name: _Tint
-        second: {r: 0, g: .534482777, b: .897000015, a: .5}
+        second: {r: 0, g: .485170394, b: .814241409, a: .518999994}
